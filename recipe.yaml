@@ -40,7 +40,7 @@ tasks:
 
   ## ox_core
   - action: download_file
-    url: https://github.com/HastH8/ox_core/releases/latest/download/ox_core.zip
+    url: https://github.com/HastH8/ox_core/releases/download/release/ox_core.zip
     path: ./tmp/ox_core.zip
   - action: unzip
     src: ./tmp/ox_core.zip
