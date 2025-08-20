@@ -39,10 +39,12 @@ tasks:
     dest: ./resources/[cfx]/screenshot-basic
 
   ## ox_core
-  - action: download_github
-    src: https://github.com/HastH8/ox_core
-    ref: main
-    dest: ./resources/[ox]/ox_core
+  - action: download_file
+    url: https://github.com/HastH8/ox_core/releases/download/v2/ox_core.zip
+    path: ./tmp/ox_core.zip
+  - action: unzip
+    src: ./tmp/ox_core.zip
+    dest: ./resources/[ox]
 
   - action: replace_string
     file: ./resources/[ox]/ox_core/sql/install.sql
