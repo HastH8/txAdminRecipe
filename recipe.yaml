@@ -4,12 +4,12 @@ $onesync: on
 name: ox_core
 version: 1.0.0
 author: Overextended
-description: The official recipe for ox_core.
+description: The official recipe for ox_core + ND Resources.
 
 tasks:
   ## prepare recipe
   - action: download_github
-    src: https://github.com/communityox/txAdminRecipe
+    src: https://github.com/HastH8/txAdminRecipe
     ref: main
     dest: ./tmp/ox
 
@@ -40,7 +40,7 @@ tasks:
 
   ## ox_core
   - action: download_file
-    url: https://github.com/communityox/ox_core/releases/latest/download/ox_core.zip
+    url: https://github.com/HastH8/ox_core/releases/latest/download/ox_core.zip
     path: ./tmp/ox_core.zip
   - action: unzip
     src: ./tmp/ox_core.zip
@@ -105,13 +105,11 @@ tasks:
     ref: main
     dest: ./resources/[ox]/ox_commands
 
-  ## ox_fuel
-  - action: download_file
-    url: https://github.com/communityox/ox_fuel/releases/latest/download/ox_fuel.zip
-    path: ./tmp/ox_fuel.zip
-  - action: unzip
-    src: ./tmp/ox_fuel.zip
-    dest: ./resources/[ox]
+  ## ND_Fuel (replace ox_fuel)
+  - action: download_github
+    src: https://github.com/HastH8/ND_Fuel
+    ref: main
+    dest: ./resources/[nd]/ND_Fuel
 
   ## ox_target
   - action: download_file
@@ -171,6 +169,24 @@ tasks:
     src: https://github.com/Bob74/bob74_ipl
     ref: master
     dest: ./resources/bob74_ipl
+
+  ## ND_Police
+  - action: download_github
+    src: https://github.com/HastH8/ND_Police
+    ref: main
+    dest: ./resources/[nd]/ND_Police
+
+  ## ND_Dealership
+  - action: download_github
+    src: https://github.com/HastH8/ND_Dealership
+    ref: main
+    dest: ./resources/[nd]/ND_Dealership
+
+  ## ND_Property
+  - action: download_github
+    src: https://github.com/HastH8/ND_Property
+    ref: main
+    dest: ./resources/[nd]/ND_Property
 
   ## cleanup
   - action: remove_path
